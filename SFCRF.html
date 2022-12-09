@@ -1,0 +1,209 @@
+
+
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>SFCRF</title>
+   
+  
+  
+    <link href="./CSS/bootstrap.min.css" rel="stylesheet">
+    <link href="./CSS/project.css" rel="stylesheet">
+   <!--  <link href="./CSS2/css" rel="stylesheet" type="text/css"> -->
+
+  
+  </head>
+  <body>
+
+    <div class="container">
+
+
+        <div class="col-md-12">
+
+          <div class="row">
+            <div class="title-header">Randomly Formed Conditional Random Fields</div>
+          </div>
+        <div class="row">
+          <div class="col-md-8 no-pad">
+            <div class="authors">
+              <a target="blank" href="http://www.eng.uwaterloo.ca/~mjshafie/">Mohammad Javad Shafiee</a><sup>1</sup>, 
+              <a target="blank" href="http://www.eng.uwaterloo.ca/~a28wong/">Alexander Wong</a><sup>1</sup>, 
+              <a target="blank" href="http://www.eng.uwaterloo.ca/~pfieguth/">Paul Fieguth</a><sup>1</sup> 
+              
+            </div>
+            <div class="affiliations">
+              <sup>1</sup>University of Waterloo 
+            </div>
+          </div>
+        
+
+        </div>
+
+        <div class="row">
+          <hr>
+        </div>
+
+        <div class="row">
+          <div class="section-header">Abstract</div>
+        </div>
+
+        <div class="row">
+        <p>Random fields have remained a topic of great interest for decades for the purpose of structured
+		inference, especially for problems such as image segmentation.  The local nodal interactions commonly
+		used in such models often suffer the short-boundary bias problem, which are tackled primarily through 
+		the incorporation of long-range nodal interactions. However, the issue of computational tractability 
+		becomes a significant issue when incorporating such long-range nodal interactions, particularly when 
+		a large number of long-range nodal interactions (e.g., fully-connected random fields) are modeled.
+		In this work, we introduce a new random field formation framework, called randomly-formed conditional 
+		random fields (RCRFs), which is aimed at tackling the issue of computational tractability when using 
+		fully-connected random fields.  Grounded in random graph theory, a fully-connected random field is modeled
+		as a random graph, and the sparse representation of the random field is formed stochastically as 
+		realizations of the random graph.  The proposed RCRF allows for efficient structured inference 
+		using fully-connected random fields while preserving modeling accuracy as well as relaxes restrictions 
+		on the types of potential functions that can be utilized. Experimental results demonstrate that
+		the proposed framework can provide competitive performance for the purpose of figure-ground segmentation
+		when compared to existing fully-connected and principled deep random field frameworks while requiring
+		only a modest run-time.</p>
+      </div>
+
+      <div class="row">
+        <hr>
+      </div>
+
+
+      <div class="row">
+        <div class="section-header">Links</div>
+      </div>
+
+      <div class="row">
+      <ul>
+        <li><a target="_blank" href="http://ieeexplore.ieee.org/document/7351406/?arnumber=7351406&tag=1">ICIP 2015</a></li>
+		<li><a target="_blank" href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.716.7827&rep=rep1&type=pdf">ICIP 2014</a></li>
+		<li><a target="_blank" href="http://arxiv.org/pdf/1506.09110">Arxiv</a></li>
+      </ul></div>
+      
+      <div class="row">
+        <hr>
+      </div>
+
+      <div class="row">
+        <div class="section-header">Stochastically Fully Connected Random Fields</div>
+      </div>
+
+      <div class="row">
+        <p>Graph G is the realization of the SFCRF. 
+		The edges in G(.) are randomly sampled, thus G is a realization of a random graph.
+		Based on the  Erdos–-R'enyi  theorem if the probability p of
+		the random graph G'  we introduce a new random field formation framework, called randomly-formed conditional 
+		random fields (RCRFs), which is aimed at  we introduce a new random field formation framework, called randomly-formed conditional 
+		random fields (RCRFs), which is aimed at is greater than logn/n the graph is connected 
+		with a high probability. As a result, the proposed graph G(.) is connected, 
+		has at least n-1 edges even for large values of &#947, and satisfies
+		a Gibbs distribution. </p>
+		<img class="paper-image-small" src="./images/SFCRF_Graph1.png">
+      </div>
+
+      <div class="row vspace-top">
+		<p>To test the effectiveness of the proposed framework,
+		we compared our proposed SFCRF against two other CRFs
+		of different neighborhood sizes. Of the two compared approaches, 
+		the first is a regular CRF with adjacent neighbors
+		(CRF-N3) where each node is connected to its closest eight
+		neighbours (those within a 3 × 3 block); the second model, CRF-N11,
+		has a larger neighborhood, where each node
+		is connected to its closest 120 neighbors (those within an
+		11 × 11 block). The exact number of pairwise cliques of
+		CRF-N3 is 1.38 × 106 (8 pairwise cliques per node) and of
+		CRF-N11 is 2.07 × 107(120 pairwise cliques per node).</p>
+        <img class="paper-image-big" src="./images/SFCRF_Res2.png">
+		<div class="row">
+        <div class="section-header">Guided Stochastic Clique Formation</div>
+		</div>
+		
+		<div class="row">
+			<p>SFCRF was shown to provide significant improvements in segmentation
+			accuracy, there were still limitations with the preservation
+			of fine structure boundaries. To address these limitations,
+			we propose a new approach to stochastic clique formation
+			for fully connected random fields (G-SFCRF) that is guided
+			by the structural characteristics of different nodes within the
+			random field. In particular, fine structures surrounding a node
+			are modeled statistically by probability distributions, and
+			stochastic cliques are formed by considering the statistical
+			similarities between nodes within the random fields. 
+			Experimental results show that G-SFCRF outperforms existing fully
+			connected CRF frameworks, SFCRF, and the principled deep
+			random field framework for image segmentation.</p>
+		</div>
+        <img class="paper-image-big" src="./images/SFCRF_Res3.png">
+		<div class="row">
+        <div class="section-header">Randomly-Formed Random Fields</div>
+		</div>
+		<div class="row">
+			<p>While the computational complexity of the inference
+			process is greatly reduced, the computational complexity
+			of forming stochastic cliques is relatively high, 
+			thus resulting in a relatively higher overall computational complexity
+			compared to the first direction. Second, to reduce the computational 
+			complexity of forming stochastic cliques, a weak
+			spatial proximity is imposed when forming the stochastic
+			cliques, in which nodal interactions are formed with decreasing 
+			probability with increasing spatial distance. <br>
+			we are inspired by fundamental work in graph sampling and random graph theory where it
+			was shown theoretically that a dense graph may be greatly
+			sparsified while retaining informational content by treating
+			the dense graph as a random graph. In the proposed framework,
+			which we will call randomly-formed conditional random fields (RCRF),
+			a fully-connected random field is modeled as a random graph and 
+			sparse representations of the random field are formed stochastically 
+			as realizations of the random graph. The randomly-formed conditional random
+			field is globally sparse with a strong balance of local and
+			long-range relationships that retain informational content and
+			as such retain the modeling power of the fully-connected
+			random field.<br>
+			Experimental results demonstrate that the proposed framework can 
+			provide competitive performance for the purpose of figure-ground 
+			segmentation when compared to existing fully-connected and
+			principled deep random field frameworks while requiring
+			only a modest run-time.
+			</p>
+		</div>
+        <img class="paper-image-big" src="./images/SFCRF_Res1.png">
+		<img class="paper-Table" src="./images/SFCRF_Res4.png">
+      </div>
+
+    </div>
+  <div class="row">
+        <hr>
+      </div>
+	<div class="row vspace-top">
+        <hr>
+      </div>
+	  
+	  <div class="row">
+        <div class="section-header">Citation</div>
+      </div>
+	  <div class="row cite vspace-top">
+        <ul>
+        <li>@article{shafiee2015forming,<br>
+		  title={Forming A Random Field via Stochastic Cliques: From Random Graphs to Fully Connected Random Fields},<br>
+		  author={Shafiee, Mohammad Javad and Wong, Alexander and Fieguth, Paul},<br>
+		  journal={arXiv preprint arXiv:1506.09110},<br>
+		  year={2015}}<br></ul>
+		  <ul>
+		<li>@inproceedings{shafiee2015improved,<br>
+		  title={Improved fine structure modeling via guided stochastic clique formation in fully connected conditional random fields},<br>
+		  author={Shafiee, MJ and Chung, AG and Wong, A and Fieguth, P},<br>
+		  booktitle={Image Processing (ICIP), 2015 IEEE International Conference on},<br>
+		  year={2015},<br>
+		  organization={IEEE}}</ul>
+		  
+		<ul>
+		<li>@inproceedings{shafiee2014efficient,<br>
+		  title={Efficient bayesian inference using fully connected conditional random fields with stochastic cliques},<br>
+		  author={Shafiee, MJ and Wong, A and Siva, P and Fieguth, P},<br>
+		  booktitle={Image Processing (ICIP), 2014 IEEE International Conference on},<br>
+		  year={2014},<br>
+		  organization={IEEE}}<br></ul>
+        
+      </div>
+
+</div></body></html>

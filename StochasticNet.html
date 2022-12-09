@@ -1,0 +1,189 @@
+
+
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>StochasticNet</title>
+   
+  
+  
+      <link href="./CSS/bootstrap.min.css" rel="stylesheet">
+    <link href="./CSS/project.css" rel="stylesheet">
+   <!--  <link href="./CSS2/css" rel="stylesheet" type="text/css"> -->
+
+  
+  </head>
+  <body>
+
+    <div class="container">
+
+
+        <div class="col-md-12">
+
+          <div class="row">
+            <div class="title-header">StochasticNet: Forming Deep Neural Networks via Stochastic Connectivity</div>
+          </div>
+        <div class="row">
+          <div class="col-md-8 no-pad">
+            <div class="authors">
+              <a target="blank" href="http://www.eng.uwaterloo.ca/~mjshafie/">Mohammad Javad Shafiee</a><sup>1</sup>, 
+			  <a target="blank" href="http://www.psiva.ca/">Parthipan Siva</a><sup>2</sup>, 
+              <a target="blank" href="http://www.eng.uwaterloo.ca/~a28wong/">Alexander Wong</a><sup>1</sup>, 
+              <a target="blank" href="http://www.eng.uwaterloo.ca/~pfieguth/">Paul Fieguth</a><sup>1</sup> 
+              
+            </div>
+            <div class="affiliations">
+              <sup>1</sup>University of Waterloo, <sup>2</sup> Aimetis Corp.  
+            </div>
+          </div>
+        
+
+        </div>
+
+        <div class="row">
+          <hr>
+        </div>
+
+        <div class="row">
+          <div class="section-header">Abstract</div>
+        </div>
+
+        <div class="row">
+        <p>Deep neural networks is a branch in machine learning that has seen a meteoric rise
+		in popularity due to its powerful abilities to represent and model high-level abstractions
+		in highly complex data.  One area in deep neural networks that is ripe for exploration is 
+		neural connectivity formation.  A pivotal study on the brain tissue of rats found that synaptic 
+		formation for specific functional connectivity in neocortical neural microcircuits can be
+		surprisingly well modeled and predicted as a random formation.  Motivated by this intriguing
+		finding, we introduce the concept of StochasticNet, where deep neural networks are formed via
+		stochastic connectivity between neurons. As a result, any type of deep neural networks can be
+		formed as a StochasticNet by allowing the neuron connectivity to be stochastic. Stochastic
+		synaptic formations, in a deep neural network architecture, can allow for efficient utilization
+		of neurons for performing specific tasks.  </p>
+      </div>
+
+      <div class="row">
+        <hr>
+      </div>
+
+
+      <div class="row">
+        <div class="section-header">Links</div>
+      </div>
+
+      <div class="row">
+      <ul>
+        <li><a target="_blank" href="http://arxiv.org/pdf/1508.05463v4">IEEE ACCESS</a></li>
+		<li><a target="_blank" href="http://arxiv.org/pdf/1512.03844">Arxiv</a></li>
+      </ul></div>
+      
+      <div class="row">
+        <hr>
+      </div>
+
+      <div class="row">
+        <div class="section-header">Motivation</div>
+      </div>
+
+      <div class="row">
+        <p>We are highly motivated by recent findings
+			presented in the pivotal neuroscience paper by Hill et al,
+			where they collected considerable data of living brain tissue
+			from Wistar rats and used this data to recreate a partial map of
+			a rat brain. After thorough analysis of the recreated brain map,
+			Hill et al. came to a very surprising yet insightful conclusion
+			with regards to the neural connectivity formation within the
+			rat’s brain. What they found was that the synaptic formation, 
+			of specific functional connectivity in neocortical neural
+			microcircuits, can be very well-modelled and predicted as a
+			random formation. </p>
+		
+      </div>
+
+      <div class="row vspace-top">
+		<p>we treat the formed deep neural networks
+			as particular realizations of a random graph. Such stochastic
+			synaptic formations in a deep neural network architecture
+			can potentially allow for efficient utilization of neurons for
+			performing specific tasks. </p>
+        <img class="paper-image-big" src="./images/Stochastic1.png">
+		<div class="row">
+        <div class="section-header">Deep convolutional neural networks</div>
+		</div>
+		
+		<div class="row">
+			<p>The neural connectivity for each randomly realized local receptive field
+			in the deep convolutional network is based on a neural connectivity probability distribution,
+			with the neural connectivity configuration then shared amongst different small neural
+			collections for a given randomly realized local receptive field. Given this modified random
+			graph model for representing
+			deep convolutional neural networks, the resultant random
+			graph realization is thus a deep convolutional neural network
+			in which each convolutional layer consists of a set of randomly
+			realized local receptive fields K, consisting of neural connection weights of a set of
+			random neurons within a small neural collection to the output
+			neuron.</p>
+		</div>
+        <img class="paper-image-small" src="./images/Stochastic2.png"> </div>
+		<div class="row">
+        <div class="section-header">Relation to Stochastic Regularization</div>
+		</div>
+		<div class="row">
+			<p>StochasticNet is not a regularization technique, it is a sparse
+			deep neural network. Existing regularization techniques do use
+			random connectivity during training but they start with a dense
+			network and end with a dense network. 
+			</p>
+
+		</div>
+        <img class="paper-image-big" src="./images/Stochastic3.png">
+	
+	
+	<div class="row">
+        <div class="section-header">Results</div>
+		</div>
+		<div class="row">
+			<p>To evaluate the feasibility of such a deep neural
+				network architecture, we train a StochasticNet using four different image datasets 
+				(CIFAR-10, MNIST, SVHN, and STL-10).  Experimental results show that a StochasticNet,
+				using less than half the number of neural connections as a conventional deep neural 
+				network, achieves comparable accuracy and reduces overfitting on the CIFAR-10, MNIST 
+				and SVHN dataset. Interestingly, StochasticNet with less than half the number of neural 
+				connections, achieved a higher accuracy (relative improvement in test error 
+				rate of ~6 compared to ConvNet) on the STL-10 dataset than a conventional deep neural network. 
+				Finally, StochasticNets have faster operational speeds while achieving better or similar
+				accuracy performances. 
+			</p>
+		</div>
+			 <img class="paper-image-big" src="./images/Stochastic4.png">
+
+    </div>
+
+	
+  <div class="row">
+        <hr>
+      </div>
+	<div class="row vspace-top">
+        <hr>
+      </div>
+	  
+	  <div class="row">
+        <div class="section-header">Citation</div>
+      </div>
+	  <div class="row cite vspace-top">
+        <ul>
+        <li>@article{shafiee2015stochasticnet,<br>
+			title={Stochasticnet: Forming deep neural networks via stochastic connectivity},<br>
+			author={Shafiee, Mohammad Javad and Siva, Parthipan and Wong, Alexander},<br>
+			journal={arXiv preprint arXiv:1508.05463},<br>
+			year={2015}}<br></ul>
+		  <ul>
+		<li>@article{shafiee2015efficient,<br>
+			  title={Efficient Deep Feature Learning and Extraction via StochasticNets},<br>
+			  author={Shafiee, Mohammad Javad and Siva, Parthipan and Fieguth, Paul and Wong, Alexander},<br>
+			  journal={arXiv preprint arXiv:1512.03844},<br>
+			  year={2015}}</ul>
+		  
+		
+        
+      </div>
+
+</div></body></html>
